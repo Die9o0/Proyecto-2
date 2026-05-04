@@ -8,6 +8,8 @@
 #include <avr/io.h>
 #include "My_Libraries/PWM0A.h"
 #include "My_Libraries/PWM0B.h"
+#include "My_Libraries/UART.h"
+#include "My_Libraries/TIMER2.h"
 
 
 int main(void)

@@ -2,6 +2,8 @@ Archive member included to satisfy reference by file (symbol)
 
 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328p/avr5/crtatmega328p.o (exit)
+c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+                              My_Libraries/ADC.o (__tablejump2__)
 
 Discarded input sections
 
@@ -10,6 +12,22 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .text          0x00000000        0x0 My_Libraries/ADC.o
+ .data          0x00000000        0x0 My_Libraries/ADC.o
+ .bss           0x00000000        0x0 My_Libraries/ADC.o
+ .text.initADC  0x00000000      0x2ec My_Libraries/ADC.o
+ .progmem.gcc_sw_table.initADC
+                0x00000000       0x26 My_Libraries/ADC.o
+ .debug_info    0x00000000       0xe7 My_Libraries/ADC.o
+ .debug_abbrev  0x00000000       0x6f My_Libraries/ADC.o
+ .debug_loc     0x00000000      0x10b My_Libraries/ADC.o
+ .debug_aranges
+                0x00000000       0x20 My_Libraries/ADC.o
+ .debug_ranges  0x00000000       0x10 My_Libraries/ADC.o
+ .debug_line    0x00000000      0x315 My_Libraries/ADC.o
+ .debug_str     0x00000000      0x1bb My_Libraries/ADC.o
+ .comment       0x00000000       0x31 My_Libraries/ADC.o
+ .debug_frame   0x00000000       0x34 My_Libraries/ADC.o
  .text          0x00000000        0x0 My_Libraries/PWM0A.o
  .data          0x00000000        0x0 My_Libraries/PWM0A.o
  .bss           0x00000000        0x0 My_Libraries/PWM0A.o
@@ -38,6 +56,53 @@ Discarded input sections
  .debug_str     0x00000000      0x18a My_Libraries/PWM0B.o
  .comment       0x00000000       0x31 My_Libraries/PWM0B.o
  .debug_frame   0x00000000       0x24 My_Libraries/PWM0B.o
+ .text          0x00000000        0x0 My_Libraries/PWM1A.o
+ .data          0x00000000        0x0 My_Libraries/PWM1A.o
+ .bss           0x00000000        0x0 My_Libraries/PWM1A.o
+ .text.PWM1A    0x00000000      0x23c My_Libraries/PWM1A.o
+ .progmem.gcc_sw_table.PWM1A
+                0x00000000       0x1a My_Libraries/PWM1A.o
+ .debug_info    0x00000000       0xb2 My_Libraries/PWM1A.o
+ .debug_abbrev  0x00000000       0x6f My_Libraries/PWM1A.o
+ .debug_loc     0x00000000      0x14a My_Libraries/PWM1A.o
+ .debug_aranges
+                0x00000000       0x20 My_Libraries/PWM1A.o
+ .debug_ranges  0x00000000       0x10 My_Libraries/PWM1A.o
+ .debug_line    0x00000000      0x273 My_Libraries/PWM1A.o
+ .debug_str     0x00000000      0x18a My_Libraries/PWM1A.o
+ .comment       0x00000000       0x31 My_Libraries/PWM1A.o
+ .debug_frame   0x00000000       0x24 My_Libraries/PWM1A.o
+ .text          0x00000000        0x0 My_Libraries/PWM1B.o
+ .data          0x00000000        0x0 My_Libraries/PWM1B.o
+ .bss           0x00000000        0x0 My_Libraries/PWM1B.o
+ .text.PWM1B    0x00000000      0x23c My_Libraries/PWM1B.o
+ .progmem.gcc_sw_table.PWM1B
+                0x00000000       0x1a My_Libraries/PWM1B.o
+ .debug_info    0x00000000       0xb2 My_Libraries/PWM1B.o
+ .debug_abbrev  0x00000000       0x6f My_Libraries/PWM1B.o
+ .debug_loc     0x00000000      0x14a My_Libraries/PWM1B.o
+ .debug_aranges
+                0x00000000       0x20 My_Libraries/PWM1B.o
+ .debug_ranges  0x00000000       0x10 My_Libraries/PWM1B.o
+ .debug_line    0x00000000      0x273 My_Libraries/PWM1B.o
+ .debug_str     0x00000000      0x18a My_Libraries/PWM1B.o
+ .comment       0x00000000       0x31 My_Libraries/PWM1B.o
+ .debug_frame   0x00000000       0x24 My_Libraries/PWM1B.o
+ .text          0x00000000        0x0 My_Libraries/TIMER2.o
+ .data          0x00000000        0x0 My_Libraries/TIMER2.o
+ .bss           0x00000000        0x0 My_Libraries/TIMER2.o
+ .text.initTIMER2
+                0x00000000      0x140 My_Libraries/TIMER2.o
+ .debug_info    0x00000000       0xf7 My_Libraries/TIMER2.o
+ .debug_abbrev  0x00000000       0x6f My_Libraries/TIMER2.o
+ .debug_loc     0x00000000       0xd9 My_Libraries/TIMER2.o
+ .debug_aranges
+                0x00000000       0x20 My_Libraries/TIMER2.o
+ .debug_ranges  0x00000000       0x10 My_Libraries/TIMER2.o
+ .debug_line    0x00000000      0x18c My_Libraries/TIMER2.o
+ .debug_str     0x00000000      0x1c4 My_Libraries/TIMER2.o
+ .comment       0x00000000       0x31 My_Libraries/TIMER2.o
+ .debug_frame   0x00000000       0x34 My_Libraries/TIMER2.o
  .text          0x00000000        0x0 My_Libraries/UART.o
  .data          0x00000000        0x0 My_Libraries/UART.o
  .bss           0x00000000        0x0 My_Libraries/UART.o
@@ -46,17 +111,17 @@ Discarded input sections
  .text.writeString
                 0x00000000       0x26 My_Libraries/UART.o
  .text.initUART
-                0x00000000       0xd4 My_Libraries/UART.o
- .debug_info    0x00000000      0x166 My_Libraries/UART.o
+                0x00000000      0x272 My_Libraries/UART.o
+ .debug_info    0x00000000      0x1cb My_Libraries/UART.o
  .debug_abbrev  0x00000000       0xcf My_Libraries/UART.o
- .debug_loc     0x00000000      0x16a My_Libraries/UART.o
+ .debug_loc     0x00000000      0x241 My_Libraries/UART.o
  .debug_aranges
                 0x00000000       0x30 My_Libraries/UART.o
  .debug_ranges  0x00000000       0x20 My_Libraries/UART.o
- .debug_line    0x00000000      0x190 My_Libraries/UART.o
- .debug_str     0x00000000      0x1dc My_Libraries/UART.o
+ .debug_line    0x00000000      0x2b6 My_Libraries/UART.o
+ .debug_str     0x00000000      0x21f My_Libraries/UART.o
  .comment       0x00000000       0x31 My_Libraries/UART.o
- .debug_frame   0x00000000       0x64 My_Libraries/UART.o
+ .debug_frame   0x00000000       0x7c My_Libraries/UART.o
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -73,6 +138,22 @@ Discarded input sections
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc   0x00000000        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_tablejump2.o)
 
 Memory Configuration
 
@@ -91,8 +172,12 @@ Linker script and memory map
 Address of section .data set to 0x800100
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega328p/avr5/crtatmega328p.o
 LOAD main.o
+LOAD My_Libraries/ADC.o
 LOAD My_Libraries/PWM0A.o
 LOAD My_Libraries/PWM0B.o
+LOAD My_Libraries/PWM1A.o
+LOAD My_Libraries/PWM1B.o
+LOAD My_Libraries/TIMER2.o
 LOAD My_Libraries/UART.o
 START GROUP
 LOAD c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a

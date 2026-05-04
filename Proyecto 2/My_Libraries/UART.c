@@ -17,7 +17,7 @@ void writeString(char* string)
 		writeChar(string[i]);
 	}
 }
-void initUART(uint8_t speed, uint8_t multiple_p, uint8_t INT_TX, uint8_t INT_RX, uint8_t INT_UDR0, uint8_t recibir, uint8_t transmitir)
+void initUART(uint8_t speed, uint8_t multiple_p, uint8_t INT_TX, uint8_t INT_RX, uint8_t INT_UDR0, uint8_t recibir, uint8_t transmitir, uint8_t character_size, uint8_t modo, uint8_t paridad, uint8_t stop_bit, uint8_t clock_pol, uint16_t BAUD_VALUE)
 {
 	//Configurar RX (PD0) y TX (PD1)
 	DDRD	&= ~(1<<DDD0);
@@ -78,4 +78,86 @@ void initUART(uint8_t speed, uint8_t multiple_p, uint8_t INT_TX, uint8_t INT_RX,
 	{
 		UCSR0B &= ~(1<<TXEN0);
 	}
+	switch (character_size)
+	{
+		case 5:
+		UCSR0B &= ~(1<<UCSZ02);
+		UCSR0C &= ~((1<<UCSZ01)|(1<<UCSZ00));
+		break;
+		case 6:
+		UCSR0B &= ~(1<<UCSZ02);
+		UCSR0C &= ~((1<<UCSZ01)|(1<<UCSZ00));
+		UCSR0C |= (1<<UCSZ00);
+		break;
+		case 7:
+		UCSR0B &= ~(1<<UCSZ02);
+		UCSR0C &= ~((1<<UCSZ01)|(1<<UCSZ00));
+		UCSR0C |= (1<<UCSZ01);
+		break;
+		case 8:
+		UCSR0B &= ~(1<<UCSZ02);
+		UCSR0C &= ~((1<<UCSZ01)|(1<<UCSZ00));
+		UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);
+		break;
+		case 9:
+		UCSR0B &= ~(1<<UCSZ02);
+		UCSR0C &= ~((1<<UCSZ01)|(1<<UCSZ00));
+		UCSR0B |= (1<<UCSZ02);
+		UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);
+		break;
+		default:
+		UCSR0B &= ~(1<<UCSZ02);
+		UCSR0C &= ~((1<<UCSZ01)|(1<<UCSZ00));
+		UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);
+		break;
+	}
+	switch (modo)
+	{
+		case asincrono:
+		UCSR0C &= ~((1<<UMSEL01)|(1<<UMSEL01));
+		break;
+		case sincrono:
+		UCSR0C &= ~((1<<UMSEL01)|(1<<UMSEL00));
+		UCSR0C |= (1<<UMSEL00);
+		break;
+		case master:
+		UCSR0C |= ((1<<UMSEL01)|(1<<UMSEL00));
+		break;
+		default:
+		UCSR0C &= ~((1<<UMSEL01)|(1<<UMSEL01));
+		break;
+	}
+	switch (paridad)
+	{
+		case desactivado:
+		UCSR0C &= ~((1<<UPM00)|(1<<UPM01));
+		break;
+		case par:
+		UCSR0C &= ~((1<<UPM00)|(1<<UPM01));
+		UCSR0C |= (1<<UPM01);
+		break;
+		case impar:
+		UCSR0C |= ((1<<UPM00)|(1<<UPM01));
+		break;
+		default:
+		UCSR0C &= ~((1<<UPM00)|(1<<UPM01));
+		break;
+	}
+	if (stop_bit == 2)
+	{
+		UCSR0C |= (1<<USBS0);
+	} 
+	else
+	{
+		UCSR0C &= ~(1<<USBS0);
+	}
+	if (clock_pol == bajada)
+	{
+		UCSR0C &= ~(1<<UCPOL0);
+	} 
+	else
+	{
+		UCSR0C |= (1<<UCPOL0);
+	}
+	UBRR0 = BAUD_VALUE;
 }

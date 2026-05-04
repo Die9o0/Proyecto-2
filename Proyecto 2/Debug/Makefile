@@ -39,8 +39,12 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../main.c \
+../My_Libraries/ADC.c \
 ../My_Libraries/PWM0A.c \
 ../My_Libraries/PWM0B.c \
+../My_Libraries/PWM1A.c \
+../My_Libraries/PWM1B.c \
+../My_Libraries/TIMER2.c \
 ../My_Libraries/UART.c
 
 
@@ -52,26 +56,42 @@ ASM_SRCS +=
 
 OBJS +=  \
 main.o \
+My_Libraries/ADC.o \
 My_Libraries/PWM0A.o \
 My_Libraries/PWM0B.o \
+My_Libraries/PWM1A.o \
+My_Libraries/PWM1B.o \
+My_Libraries/TIMER2.o \
 My_Libraries/UART.o
 
 OBJS_AS_ARGS +=  \
 main.o \
+My_Libraries/ADC.o \
 My_Libraries/PWM0A.o \
 My_Libraries/PWM0B.o \
+My_Libraries/PWM1A.o \
+My_Libraries/PWM1B.o \
+My_Libraries/TIMER2.o \
 My_Libraries/UART.o
 
 C_DEPS +=  \
 main.d \
+My_Libraries/ADC.d \
 My_Libraries/PWM0A.d \
 My_Libraries/PWM0B.d \
+My_Libraries/PWM1A.d \
+My_Libraries/PWM1B.d \
+My_Libraries/TIMER2.d \
 My_Libraries/UART.d
 
 C_DEPS_AS_ARGS +=  \
 main.d \
+My_Libraries/ADC.d \
 My_Libraries/PWM0A.d \
 My_Libraries/PWM0B.d \
+My_Libraries/PWM1A.d \
+My_Libraries/PWM1B.d \
+My_Libraries/TIMER2.d \
 My_Libraries/UART.d
 
 OUTPUT_FILE_PATH +=Proyecto\ 2.elf
@@ -95,6 +115,13 @@ LINKER_SCRIPT_DEP+=
 	@echo Finished building: $<
 	
 
+My_Libraries/ADC.o: ../My_Libraries/ADC.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
 My_Libraries/PWM0A.o: ../My_Libraries/PWM0A.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
@@ -103,6 +130,27 @@ My_Libraries/PWM0A.o: ../My_Libraries/PWM0A.c
 	
 
 My_Libraries/PWM0B.o: ../My_Libraries/PWM0B.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+My_Libraries/PWM1A.o: ../My_Libraries/PWM1A.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+My_Libraries/PWM1B.o: ../My_Libraries/PWM1B.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+My_Libraries/TIMER2.o: ../My_Libraries/TIMER2.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega328p -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
