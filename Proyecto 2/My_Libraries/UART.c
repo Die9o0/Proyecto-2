@@ -111,7 +111,7 @@ void initUART(uint8_t speed, uint8_t multiple_p, uint8_t INT_TX, uint8_t INT_RX,
 		UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);
 		break;
 	}
-	switch (modo)
+	switch (modo)	//Seleccionar modo
 	{
 		case asincrono:
 		UCSR0C &= ~((1<<UMSEL01)|(1<<UMSEL01));
@@ -122,12 +122,12 @@ void initUART(uint8_t speed, uint8_t multiple_p, uint8_t INT_TX, uint8_t INT_RX,
 		break;
 		case master:
 		UCSR0C |= ((1<<UMSEL01)|(1<<UMSEL00));
-		break;
-		default:
+		break;		
+		default:		//Asincrono predeterminado
 		UCSR0C &= ~((1<<UMSEL01)|(1<<UMSEL01));
 		break;
 	}
-	switch (paridad)
+	switch (paridad)	//Seleccionar paridad
 	{
 		case desactivado:
 		UCSR0C &= ~((1<<UPM00)|(1<<UPM01));
@@ -143,7 +143,7 @@ void initUART(uint8_t speed, uint8_t multiple_p, uint8_t INT_TX, uint8_t INT_RX,
 		UCSR0C &= ~((1<<UPM00)|(1<<UPM01));
 		break;
 	}
-	if (stop_bit == 2)
+	if (stop_bit == 2)		//1 o 2 stop bits
 	{
 		UCSR0C |= (1<<USBS0);
 	} 
@@ -151,13 +151,13 @@ void initUART(uint8_t speed, uint8_t multiple_p, uint8_t INT_TX, uint8_t INT_RX,
 	{
 		UCSR0C &= ~(1<<USBS0);
 	}
-	if (clock_pol == bajada)
+	if (clock_pol == subida) //En subida o bajada
 	{
-		UCSR0C &= ~(1<<UCPOL0);
+		UCSR0C |= (1<<UCPOL0);
 	} 
 	else
 	{
-		UCSR0C |= (1<<UCPOL0);
+		UCSR0C &= ~(1<<UCPOL0);
 	}
 	UBRR0 = BAUD_VALUE;
 }

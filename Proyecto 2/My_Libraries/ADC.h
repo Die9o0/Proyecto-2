@@ -28,5 +28,6 @@
 #define TMR1_ovf 6
 #define TMR1_capture 7
 
+void initADC (uint8_t referencia, uint8_t justificacion, uint8_t MUXADC, uint8_t auto_trigger, uint8_t INT_ADC, uint8_t prescaler, uint8_t trigger);
 
 #endif /* ADC_H_ */

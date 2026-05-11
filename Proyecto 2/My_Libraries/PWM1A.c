@@ -10,11 +10,11 @@ void PWM1A(uint8_t modo, int prescaler, uint8_t invert)
 	DDRB |= (1<<DDB1); //Enciende el puerto correspondiente
 	if (invert == invertido) //Configura si está o no invertido
 	{
-		TCCR1A &= ~((1<<COM1A0) | (1<<COM1A1));
-		TCCR1A |= (1<<COM1A0) | (1<<COM1A1);
+		TCCR1A &= ~((1<<COM1B0) | (1<<COM1B1));
+		TCCR1A |= (1<<COM1B0) | (1<<COM1B1);
 		} else {
-		TCCR1A &= ~((1<<COM1A0) | (1<<COM1A1));
-		TCCR1A |= (1<<COM1A1); //De forma predeterminada está en no invertido
+		TCCR1A &= ~((1<<COM1B0) | (1<<COM1B1));
+		TCCR1A |= (1<<COM1B1); //De forma predeterminada está en no invertido
 	}
 	switch (modo) //Configura el modo
 	{

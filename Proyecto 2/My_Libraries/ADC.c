@@ -96,11 +96,11 @@ void initADC (uint8_t referencia, uint8_t justificacion, uint8_t MUXADC, uint8_t
 	}
 	if (INT_ADC==activado)
 	{
-		ADCSRA |= (1<<ADIF);
+		ADCSRA |= (1<<ADIE);
 	} 
 	else
 	{
-		ADCSRA &= ~(1<<ADIF);
+		ADCSRA &= ~(1<<ADIE);
 	}
 	switch (prescaler)
 	{
