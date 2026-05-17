@@ -6,6 +6,8 @@ main.c
 
 My_Libraries\ADC.c
 
+My_Libraries\EEPROM.c
+
 My_Libraries\PWM0A.c
 
 My_Libraries\PWM0B.c

@@ -129,6 +129,12 @@
     <Compile Include="My_Libraries\ADC.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="My_Libraries\EEPROM.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="My_Libraries\EEPROM.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="My_Libraries\PWM0A.c">
       <SubType>compile</SubType>
     </Compile>
