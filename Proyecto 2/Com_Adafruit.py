@@ -74,8 +74,9 @@ def message(client, feed_id, payload):
         myArduino.write(bytes([4, int(payload)]))
 
     elif feed_id == FEED_ID_receive_5:
-        myArduino.write(bytes([5, int(payload)]))
-        client.publish(FEED_ID_Send_5, payload)
+        if int(payload) != 0:
+            myArduino.write(bytes([5, int(payload)]))
+            client.publish(FEED_ID_Send_5, payload)
 # Create an MQTT client instance.
 client = MQTTClient(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
 myArduino = serial.Serial(port='COM10', baudrate=2400, timeout=0.1)
